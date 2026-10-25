@@ -1,40 +1,9 @@
 
-function removerImg(){
+import { verificarLetra} from "./app.js"
 
-    const img = document.getElementById("id_img_desencriptador");
-
-    if (img) {
-        img.remove();
-    }
-}
-
-function mostrarTexto(textEncriptado){
-
-    const resultado = document.getElementById("resultado");
-    resultado.textContent="";
-
-    resultado.textContent = textEncriptado;
-
-}
-
-
-function verificarLetra(){
-    let letra = document.getElementById("input_users").value;
-
-    if(letra.toLowerCase()!= letra){
-        removerImg()
-        mostrarTexto("Tipo de letra no valido, Solo se aceptan minusculas");
-        return false;
-    }
-    return true;
-}
-
-
-
-function encriptarTexto(){
+export function encriptarTexto(text){
 
     const encriptarTexto = new Map([
-
         ["e","enter"],
         ["i","imes"],
         ["a","ai"],
@@ -43,8 +12,6 @@ function encriptarTexto(){
       ]);
 
     let textEncriptado="";
-    const text = document.getElementById("input_users").value;
-
     if (verificarLetra()){
         for (let char in text){
         
@@ -54,16 +21,11 @@ function encriptarTexto(){
             else{
                 textEncriptado += text[char];
             }
+        }
     }
-
-    removerImg();
-
-    mostrarTexto(textEncriptado);
-
-
-    } 
+    return textEncriptado;
 }
-function desencriptadorTexto(){
+export function desencriptadorTexto(text){
     const desencriptarTexto = new Map([
         ["enter","e"],
         ["imes","i"],
@@ -74,7 +36,7 @@ function desencriptadorTexto(){
 
       let i=0;
       let textDesencriptado="";
-      const text = document.getElementById("input_users").value;
+      
 
       if (verificarLetra()){
         while (i < text.length) {
@@ -97,10 +59,7 @@ function desencriptadorTexto(){
                 i++;
             }
         }
-
-        removerImg();
-
-        mostrarTexto(textDesencriptado);
+        return textDesencriptado;
     }
 }
     
