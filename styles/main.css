@@ -1,133 +1,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-*{
-    padding: 0;
-    margin: 0;
-}
-
-.fondo{
-    background-color: #F3F5FC;
-}
-
-.contenido{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 4rem;
-    padding: 5% 10% 5% 10%;
-    
-
-}
-
-.contenido__desencriptador{
-    flex-direction: column;
-
-}
-
-.input_user{
-    background-color: #F3F5FC;
-    font-family: "Inter", sans-serif;
-    color: #0A3871;
-    font-size: 2rem;
-    width: 100%;
-    height: 43.75rem;
-    resize: none;
-    border: none;
-    outline: none;
-
-
-}
-.input_user::placeholder{
-    color: #0A3871;
-}
-
-.recomendaciones{
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.recomendaciones__texto{
-    font-family: "Inter", sans-serif;
-    color: #495057;
-    font-size: 0.75rem;
-}
-
-.recomendaciones__icon{
-    width: 1rem;
-    height: 1rem;
-}
-
-
-
-.contenido__buttons{
-    display: flex;
-
-    align-content: space-between;
-    gap: 1.5rem;
-    margin-top: 1rem;
-}
-
-.button__Encriptar{
-    background-color: #0A3871;
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: white;
-    width: 20.5rem;
-    height: 4.2rem;
-    padding: 1.5rem;
-    border-radius: 1.5rem;
-    border-color: #0A3871;
-    border-style: solid;
-
-}
-.button__Desencriptar{
-    background-color: #D8DFE8;
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: #0A3871;
-    width: 20.5rem;
-    height: 4.2rem;
-    padding: 1.5rem;
-    border-radius: 1.5rem;
-    border-color: #0A3871;
-    border-style: solid;
-
-
-}
-
-.contenido__TextoDesencriptado{
-    background-color: white;
-    width: 100%;
-    height: 59rem;
-    border-radius: 2rem;
-    padding: 2rem;
-}
-.p_resultado{
-    font-family: "Inter", sans-serif;
-    font-size: 2rem;
-
-}
-
-.img_desencriptador{
-    width: 100%;
-    height: 100%;
-    display:initial;
-}
-
-
-@media (max-width: 800px){
-    .contenido{
-        flex-direction: column;
+:root {
+      color-scheme: light dark;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
     }
-    .img_desencriptador{
-        src: url(source/imagen\ -\ texto\ -\ desencriptador\ .png);
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: Canvas;
+      color: CanvasText;
     }
-    .contenido__buttons{
-        flex-direction: column;
+    main { width: min(960px, calc(100% - 2rem)); margin: 3rem auto; }
+    header { margin-bottom: 1.5rem; }
+    h1 { margin: 0 0 .4rem; font-size: clamp(1.8rem, 4vw, 2.5rem); }
+    .subtitle { margin: 0; opacity: .78; }
+    .notice {
+      border: 1px solid color-mix(in srgb, CanvasText 22%, transparent);
+      border-radius: .8rem;
+      padding: 1rem 1.1rem;
+      margin: 1.25rem 0;
+      font-size: .95rem;
     }
-
-
-}
+    .notice strong { display: block; margin-bottom: .25rem; }
+    .panel {
+      border: 1px solid color-mix(in srgb, CanvasText 20%, transparent);
+      border-radius: 1rem;
+      padding: clamp(1rem, 3vw, 1.5rem);
+    }
+    label { display: block; font-weight: 650; margin: 1rem 0 .4rem; }
+    textarea, input[type="password"] {
+      display: block;
+      width: 100%;
+      border: 1px solid color-mix(in srgb, CanvasText 30%, transparent);
+      border-radius: .6rem;
+      padding: .8rem .9rem;
+      font: inherit;
+      background: Canvas;
+      color: CanvasText;
+    }
+    textarea { min-height: 170px; resize: vertical; }
+    input[type="password"] { min-height: 45px; }
+    .hint { margin: .4rem 0 0; font-size: .88rem; opacity: .75; }
+    .actions { display: flex; flex-wrap: wrap; gap: .65rem; margin-top: 1rem; }
+    button {
+      border: 1px solid color-mix(in srgb, CanvasText 25%, transparent);
+      border-radius: .65rem;
+      padding: .7rem 1rem;
+      font: inherit;
+      font-weight: 650;
+      cursor: pointer;
+      background: ButtonFace;
+      color: ButtonText;
+    }
+    button.primary { background: Highlight; color: HighlightText; border-color: Highlight; }
+    button:disabled { opacity: .6; cursor: wait; }
+    #status { min-height: 1.5rem; margin: 1rem 0 0; }
+    #status[data-state="error"] { color: #d14b4b; }
+    #status[data-state="success"] { color: #25804a; }
+    footer { margin-top: 1.25rem; font-size: .88rem; opacity: .75; }
+    code { overflow-wrap: anywhere; }
